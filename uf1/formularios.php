@@ -26,7 +26,6 @@
             display: block;
             margin-top: 10px;
         }
-
     </style>
 </head>
 
@@ -80,15 +79,15 @@
                 <input type="submit" name="enviar" value="Enviar consulta">
                 <input type="reset" name="resetear" value="Buidar els camps">
             </p>
-
-            <?php
-            if (!empty($_POST)) {
-                echo "<pre>" . print_r($_POST,true) . "</pre>";
-            }
-            ?>
-
         </fieldset>
     </form>
+
+    <?php
+    if (!empty($_POST)) {
+        echo "<pre>" . print_r($_POST, true) . "</pre>";
+    }
+    ?>
+
 </body>
 
 </html>
