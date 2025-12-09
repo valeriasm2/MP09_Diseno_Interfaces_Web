@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                body {
+            min-width: 990px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            margin: 5px;
+            padding: 5px;
+            background: #f4f6f6;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .container div {
+            display: block;
+            margin: 5px;
+            padding: 5px;
+            background: #fad7a0;
+            font-size: 5em;
+            width: 100px;
+            min-height: 100px;
+            text-align: center;
+        }
+        .container div:nth-child(9) {
+            order: 2;
+        }
+
+        .container div:nth-child(10) {
+            order: 3;
+        }  
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+      </div>
+</body>
+
+</html>
