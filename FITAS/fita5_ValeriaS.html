@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cita prèvia ITV</h1>
+    <form action="" method="post">
+        <fieldset>
+            <legend>Dades del vehicle</legend>
+        <!-- matricula --> 
+            <label for="matricula">Matrícula:</label>
+            <input type="text" id="matricula" name="matricula" maxlength="7" required /><br>
+        <!-- vehiculo, solo 1 opción --> 
+            <label>Vehicle:</label>
+            <input type="radio" id="cotxe" name="vehicle" value="cotxe" required>
+            <label for="cotxe">Cotxe</label>
+     
+            <input type="radio" id="moto" name="vehicle" value="moto">
+            <label for="moto">Moto</label><br>
+        <!-- data revision -->            
+            <label for="data_revisio">Data de revisió:</label>
+            <input type="date" id="data_revisio" name="data_revisio" required /><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Autoritzacions</legend>
+            <label>
+                <input type="checkbox" name="autoritzacio1" checked> Accepto la política de privacitat
+            </label><br>
+            <label>
+                <input type="checkbox" name="autoritzacio2"> Autoritzo l’enviament de comunicacions
+            </label>
+        </fieldset>
+        <br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Neteja">
+    </form>
+</body>
+</html>
+
+
