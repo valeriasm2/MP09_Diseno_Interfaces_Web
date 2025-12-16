@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaciones de Logo</title>
+    <style>
+        body {
+            position: relative;
+            height: 400px;
+            margin: 20px;
+        }
+
+        img {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+
+        /* 1. Rotación constante */
+        .girar {
+            animation: girar 3s linear infinite;
+        }
+
+        @keyframes girar {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 2. Movimiento circular */
+        .circular {
+            animation: circular 4s ease-in-out infinite;
+        }
+
+        @keyframes circular {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(100px, 0) rotate(90deg); }
+            50% { transform: translate(100px, 100px) rotate(180deg); }
+            75% { transform: translate(0, 100px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+
+        /* 3. Zoom in y out */
+        .zoom {
+            animation: zoom 2s ease-in-out infinite;
+        }
+
+        @keyframes zoom {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.5); }
+        }
+
+        /* 4. Oscilar como péndulo */
+        .pendulo {
+            animation: pendulo 2s ease-in-out infinite;
+            top: 150px;
+            left: 150px;
+        }
+
+        @keyframes pendulo {
+            0% { transform: rotate(-20deg); }
+            50% { transform: rotate(20deg); }
+            100% { transform: rotate(-20deg); }
+        }
+
+        /* 5. Desplazamiento diagonal */
+        .diagonal {
+            animation: diagonal 3s ease-in-out infinite;
+        }
+
+        @keyframes diagonal {
+            0% { top: 0; left: 0; }
+            50% { top: 200px; left: 200px; }
+            100% { top: 0; left: 0; }
+        }
+
+        /* 6. Combinación girar+zoom+desplazamiento */
+        .combo {
+            animation: combo 4s ease-in-out infinite;
+        }
+
+        @keyframes combo {
+            0% { transform: translate(0,0) rotate(0deg) scale(1); }
+            25% { transform: translate(100px,0) rotate(90deg) scale(1.2); }
+            50% { transform: translate(100px,100px) rotate(180deg) scale(1); }
+            75% { transform: translate(0,100px) rotate(270deg) scale(1.2); }
+            100% { transform: translate(0,0) rotate(360deg) scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Prueba de Animaciones</h1>
+
+    <p>Prueba cambiando la clase de la imagen: girar, circular, zoom, pendulo, diagonal, combo</p>
+
+    <img src="../logoIETI.jpg" alt="Logo" class="combo" />
+
+    <!-- Para probar otras animaciones, cambia la clase de la imagen -->
+    <!-- Ejemplo: <img src="logoIETI.jpg" class="combo" /> -->
+</body>
+</html>
