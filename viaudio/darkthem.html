@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mode Clar/Fosc</title>
+    <style>
+        body.no-js button {
+            display: none;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: grey;
+                color: white;
+            }
+
+            body table,
+            body th,
+            body td {
+                border: 1px solid white;
+                text-align: center;
+            }
+
+            body table th {
+                background-color: rgba(255, 255, 255, 0.5);
+            }
+
+            body table tr:nth-child(even) {
+                background-color: rgba(255, 255, 255, 0.3);
+            }
+
+            body.light-mode {
+                padding: 25px;
+                background-color: white;
+                color: black;
+                font-size: 25px;
+            }
+
+            body.light-mode table,
+            body.light-mode th,
+            body.light-mode td {
+                border: 1px solid black;
+                text-align: center;
+            }
+
+            body.light-mode table th {
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+
+            body.light-mode table tr:nth-child(even) {
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            body {
+                padding: 25px;
+                background-color: white;
+                color: black;
+                font-size: 25px;
+            }
+
+            body table,
+            body th,
+            body td {
+                border: 1px solid black;
+                text-align: center;
+            }
+
+            body table th {
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+
+            body table tr:nth-child(even) {
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+
+            body.dark-mode {
+                background-color: grey !important;
+                color: white !important;
+            }
+
+            body.dark-mode table,
+            body.dark-mode th,
+            body.dark-mode td {
+                border: 1px solid white !important;
+            }
+
+            body.dark-mode table th {
+                background-color: rgba(255, 255, 255, 0.5) !important;
+            }
+
+            body.dark-mode table tr:nth-child(even) {
+                background-color: rgba(255, 255, 255, 0.3) !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="no-js">
+    <h2>Alternar el mode fosc / clar</h2>
+
+    <p>Aquesta pàgina selecciona automàticament el mode segons la preferència del teu navegador, però pots alternar el mode també amb el botó.</p>
+
+    <p>Feu clic al botó per alternar entre el mode fosc (<em>Dark Mode</em>) i el clar (<em>Light Mode</em>) per a
+        aquesta pàgina.</p>
+
+    <p>Recordeu que amb JS podeu alternar entre diferents clases amb la següent comanda:
+        <code>document.body.classList.toggle("claseA");</code>
+    </p>
+
+    <button id="toggle-darkmode">Commuta el mode fosc</button>
+
+    <p><a href="#">Sóc un enllaç, no em clicqueu</a></p>
+
+    <table cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Color</th>
+                <th>Valor Hexadecimal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>IndianRed</td>
+                <td>#CD5C5C</td>
+            </tr>
+            <tr>
+                <td>LightCoral</td>
+                <td>#F08080</td>
+            </tr>
+            <tr>
+                <td>Salmon</td>
+                <td>#FA8072</td>
+            </tr>
+            <tr>
+                <td>DarkSalmon</td>
+                <td>#E9967A</td>
+            </tr>
+            <tr>
+                <td>LightSalmon</td>
+                <td>#FFA07A</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        document.body.classList.remove("no-js");
+        document.body.classList.toggle(
+            window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark-mode" : "light-mode"
+        );
+
+        document.getElementById("toggle-darkmode").onclick = function () {
+            document.body.classList.toggle("dark-mode");
+            document.body.classList.toggle("light-mode");
+        };
+    </script>
+
+</body>
+
+</html>

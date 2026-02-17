@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+ 
+<h2>Vídeo amb HTML5</h2>
+  
+<!-- Modifica el següent element -->    
+<video id="video1" controls width="600" poster="https://agora.xtec.cat/iesesteveterradas/wp-content/uploads/usu855/cabecera_web_v2.jpg">
+  <source src="http://bezerik.es/online/small.webm" type="video/webm">
+  <source src="http://bezerik.es/online/small.ogv" type="video/ogg">
+  <source src="http://bezerik.es/online/small.mp4" type="video/mp4">
+  <source src="http://bezerik.es/online/small.3gp" type="video/3gp">
+  El teu navegador no suporta el vídeo HTML5.
+</video>  
+
+<br>
+<button onclick="document.getElementById('video1').pause();">Aturar</button>
+<button onclick="document.getElementById('video1').play();">Reproduir</button>
+<button onclick="let v=document.getElementById('video1'); v.paused?v.play():v.pause();">Play/Pause</button>
+  
+<p><strong>Apartat 1</strong><br>Afegiu els canvis necesaris (HTML i CSS) per afegir un clip de vídeo i que estiguin activitats els controls. Les rutes dels arxius i el seu tipus són:<ul>
+  <li>Link: <a href="http://bezerik.es/online/small.webm">http://bezerik.es/online/small.webm</a><br>Type: video/webm</li>
+  <li>Link: <a href="http://bezerik.es/online/small.ogv">http://bezerik.es/online/small.ogv</a><br>Type: video/ogg</li>
+  <li>Link: <a href="http://bezerik.es/online/small.mp4">http://bezerik.es/online/small.mp4</a><br>Type: video/mp4</li>
+  <li>Link: <a href="http://bezerik.es/online/small.3gp">http://bezerik.es/online/small.3gp</a><br>Type: video/3gp</li>
+  </ul>
+Tingues en compte que els formats MP4 i WEBM són suportats per tots els navegadors, en cavi el format OGG esta suportat per tots excepte Safari.</p>
+
+  <p><strong>Apartat 2</strong><br>
+Afegeix els atributs o característiques necessaries per a que el vídeo tingui una amplada de 600 píxels.</p>
+
+    <p><strong>Apartat 3</strong><br>
+Afegeix la següent imatge <a href="https://agora.xtec.cat/iesesteveterradas/wp-content/uploads/usu855/cabecera_web_v2.jpg">https://agora.xtec.cat/iesesteveterradas/wp-content/uploads/usu855/cabecera_web_v2.jpg</a> com a <a href="https://www.w3schools.com/tags/att_video_poster.asp">poster</a> del vídeo.</p>
+    
+    <p><strong>Apartat 4</strong><br>
+Afegeix dos buttons amb el text: "Aturar" i "Reproduir" just després de l'etiqueta &lt;video&gt;. Afegeix el JavaScript corresponent per a que aquests dos buttons interactuin amb el vídeo.<br>Recordeu que amb JS podeu utilitzar les següents funcions natives que penjen del objecte video:<br>
+<code>.play();<br>.pause();</code></p>
+
+<p><strong>Apartat 5</strong><br>
+Afegeix un tercer button amb el text: "Play/Pause". Afegeix el JavaScript corresponent per a que aquest button interactuin amb el vídeo.<br>Recordeu que amb JS podeu consultar l'estat del vídeo accedint al seu atribut:<br>
+<code>.paused</code></p>
+  
+</body>
+</html>

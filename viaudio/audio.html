@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html>
+
+    <body>
+
+        <h2>Àudio amb HTML5</h2>
+
+        <!-- Modifica el següent element -->
+        <audio id="audio1" controls>
+            <source src="http://bezerik.es/online/Fluffing_a_Duck.mp3" type="audio/mp3">
+            <source src="http://bezerik.es/online/Fluffing_a_Duck.ogg" type="audio/ogg">
+        </audio>
+
+        <audio id="audio2" controls >
+            <source src="http://bezerik.es/online/Scheming_Weasel_faster.mp3" type="audio/mp3">
+            <source src="http://bezerik.es/online/Scheming_Weasel_faster.ogg" type="audio/ogg">
+        </audio>
+
+        <audio id="audio3" controls >
+            <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+            <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mp3">
+        </audio>
+
+        <audio id="terminalo" controls>
+            <source src="https://www.myinstants.com/es/instant/makka-pakka-70495/?utm_source=copy&utm_medium=share">
+        </audio>
+
+        <button id="play" onclick="document.getElementById('audio1').play()"> PLAY </button>
+        <button id="stop" onclick="document.getElementById('audio1').pause();document.getElementById('audio1').currentTime=0;"> STOP </button>
+        <button id="masVol" onclick="let a=document.getElementById('audio1'); a.volume = Math.min(1, a.volume+0.1)"> Subir volum </button>
+        <button id="menosVol" onclick="let a=document.getElementById('audio1'); a.volume = Math.max(0, a.volume-0.1)"> Bajar volum </button>
+
+        <p><strong>Apartat 1</strong><br>Afegiu els canvis necesaris (HTML i CSS) per afegir un clip d'àudio. Les rutes
+            dels arxius són:
+        <ul>
+            <li>Link: <a
+                    href="http://bezerik.es/online/Fluffing_a_Duck.mp3">http://bezerik.es/online/Fluffing_a_Duck.mp3</a><br>Type:
+                audio/mpeg.</li>
+            <li>Link: <a
+                    href="http://bezerik.es/online/Fluffing_a_Duck.ogg">http://bezerik.es/online/Fluffing_a_Duck.ogg</a><br>Type:
+                audio/ogg.</li>
+            <li>Link: <a
+                    href="http://bezerik.es/online/Scheming_Weasel_faster.mp3">http://bezerik.es/online/Scheming_Weasel_faster.mp3</a><br>Type:
+                audio/mpeg.</li>
+            <li>Link: <a
+                    href="http://bezerik.es/online/Scheming_Weasel_faster.ogg">http://bezerik.es/online/Scheming_Weasel_faster.ogg</a><br>Type:
+                audio/ogg.</li>
+            <li>https://www.w3schools.com/html/horse.ogg</li>
+            <li>https://www.w3schools.com/html/horse.mp3</li>
+        </ul>
+        </p>
+
+        <p><strong>Apartat 2</strong><br>
+            Modifica el audio per a que s'auto-reprodueixi al visitar el web.</p>
+
+        <p><strong>Apartat 3</strong><br>
+            Modifica el audio per a que contingui només dos "sources", El OGG apunti a una cançó i el MP3 a una canço
+            diferent. El OGG no esta suportat per els navegadors Safari i Edge/IE. En canvi el MP3 esta suportat per
+            tots els navegadors. Aixi que visita aquest exercici amb diferents navegadors i comprova quina cançó es
+            reprodueix.</p>
+
+        <p><strong>Apartat 4</strong><br>
+            Afegeix quatre buttons amb el text: "Aturar", "Reproduir", "Pujar volum" i "Baixar volum", just després de
+            l'etiqueta &lt;audio&gt;. Afegeix el JavaScript corresponent per a que aquests quatre buttons interactuin
+            amb el vídeo.<br>Recordeu que amb JS podeu utilitzar les següents funcions natives que penjen del objecte
+            audio:<br>
+            <code>.play();<br>.pause();</code><br>També podeu utilitzar el atribut natiu (volume)i sumarli o restarli
+            valors per pujar o baixar el volum:<br>
+            <code>.volume+=0.1<br>.volume-=0.1</code>
+        </p>
+
+    </body>
+
+    </html>
+</body>
+
+</html>

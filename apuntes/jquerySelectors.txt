@@ -1,0 +1,28 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+$(document).ready(function() {
+  /*2. Selecciona tots els paragrafs i amb la funció ".css('propietat', 'valor')" aplica color blau al text.*/
+  $("p").css('color', 'blue');
+  
+  /*3. Selecciona totes les fileres imparells de les taules i aplica un fons gris suau.*/
+  $("table tr:odd").css('background-color' , '#e0e0e0');
+  
+  /*4. Selecciona el últim encapçalament de nivell tres i aplica un fons de color negre i un color de text groc.*/
+  $("h3:last").css('background-color','black').css('color','yellow');
+
+  /*5. Selecciona tots els elements <em> fills directes de <code> i aplica un border de un pixels de grossor de color taronja.*/
+  $("code > em").css("border", "2px solid orange");
+  
+  /*6. Selecciona la tercera taula i aplica un fons de color rosa.*/
+  $("table:nth(3)").css('background-color' , 'pink');
+  
+  /*7. Selecciona tots els encapçalaments i aplica una font del tipus "Tahoma".*/
+  $(":header").css("font-family", "Arial");
+  
+  /*8. Selecciona totes les files (d'una taula) que contenen un element <code> i aplica un fons de color groc.*/
+  $("tr:has(code)").css('background' , 'yellow')
+  
+  /*9. Selecciona tots els elements amb la classe "shadow" i aplica un border de 5 píxels de color blau.*/
+  $(".shadow").css("border", "5px solid blue");
+  
+});

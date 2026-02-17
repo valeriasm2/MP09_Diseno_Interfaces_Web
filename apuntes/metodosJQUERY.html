@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            padding: 25px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Funcions bàsiques de jQuery</h2>
+    <img src="https://agora.xtec.cat/iesesteveterradas/wp-content/uploads/usu855/cabecera_web_v2.jpg"
+        alt="Institut Esteve Terradas i Illa">
+
+    <!-- Afageix els botons demanats -->
+    <div>
+        <button id="esconder">Amagar</button>
+        <button id="muestra">Mostrar</button>
+        <button id="hodio">Mostrar/Amagar</button>
+        <button id="amagar2">Amagar 2</button>
+        <button id="mostrar2">Mostrar 2</button>
+        <button id="toggle2">Mostrar/Amagar 2</button>
+        <button id="animar">Animar imatge</button>
+        <button id="resetanim">Resetejar animació de la imatge</button>
+    </div>
+    
+
+    <h3>Mètodes d'efecte jQuery </h3>
+    <table cellpadding="10" border="1">
+        <tbody>
+            <tr>
+                <th style="width:20%">Mètode</th>
+                <th>Descripció</th>
+            </tr>
+            <tr>
+                <td><a href="https://www.w3schools.com/jquery/eff_animate.asp">animate()</a></td>
+                <td>Runs a custom animation on the selected elements</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.w3schools.com/jquery/eff_clearqueue.asp">clearQueue()</a></td>
+                <td>Removes all remaining queued functions from the selected elements</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.w3schools.com/jquery/eff_delay.asp">delay()</a></td>
+                <td>Sets a delay for all queued functions on the selected elements</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.w3schools.com/jquery/eff_dequeue.asp">dequeue()</a></td>
+                <td>Removes the next function from the queue, and then executes the function</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.w3schools.com/jquery/eff_fadein.asp">fadeIn()</a></td>
+                <td>Fades in the selected elements</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.w3schools.com/jquery/eff_fadeout.asp">fadeOut()</a></td>
+                <td>Fades out the selected elements</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.w3schools.com/jquery/eff_fadeto.asp">fadeTo()</a></td>
+                <td>Fades in/out the selected elements to a given opacity</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.w3schools.com/jquery/eff_fadetoggle.asp">fadeToggle()</a></td>
+                <td>Toggles between the fadeIn() and fadeOut() methods</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.w3schools.com/jquery/eff_finish.asp">finish()</a></td>
+                <td>Stops, removes and completes all queued animations for the selected elements</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.w3schools.com/jquery/eff_hide.asp">hide()</a></td>
+                <td>Hides the selected elements</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.w3schools.com/jquery/eff_queue.asp">queue()</a></td>
+                <td>Shows the queued functions on the selected elements</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.w3schools.com/jquery/eff_show.asp">show()</a></td>
+                <td>Shows the selected elements</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.w3schools.com/jquery/eff_slidedown.asp">slideDown()</a></td>
+                <td>Slides-down (shows) the selected elements</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.w3schools.com/jquery/eff_slidetoggle.asp">slideToggle()</a></td>
+                <td>Toggles between the slideUp() and slideDown() methods</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.w3schools.com/jquery/eff_slideup.asp">slideUp()</a></td>
+                <td>Slides-up (hides) the selected elements</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.w3schools.com/jquery/eff_stop.asp">stop()</a></td>
+                <td>Stops the currently running animation for the selected elements</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.w3schools.com/jquery/eff_toggle.asp">toggle()</a></td>
+                <td>Toggles between the hide() and show() methods</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 1. Modifica el HTML per carregar la llibreria jQuery (versió comprimida) al document desde el servidors CDN de Google. -->
+
+    <!---------------------------------------------------------------------------
+    // 5. Afegeix un codi per que en cas de que la llibreria externa no carregui, carregui una copia local de jQuery.
+    //    Pista: busca a google quelcom semblant a: "Load jquery if its not already loaded and use local version if no connection is available".
+    // --------------------------------------------------------------------------->
+
+    <script src="https://ajax.googleapisdddddd.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
+
+    <script>
+        // 2. Afegeix un alert amb el text "DOM carregat" un cop jQuery esta llest.
+        $(document).ready(function () {
+            /* alert("DOM carregat"); */
+
+            // 6. Botó "Amagar" --> fadeOut amb velocitat slow (17).
+            $("#esconder").on("click", function () {
+                $("img").fadeOut("slow");
+            });
+
+            // 7. Botó "Mostrar" --> fadeIn amb velocitat 1000ms (18).
+            $("#muestra").on("click", function () {
+                $("img").fadeIn(1000);
+            });
+
+            // 8. Botó "Mostrar/Amagar" FADETOGGLE (11).
+            $("#hodio").on("click", function () {
+                $("img").fadeToggle();
+            });
+
+            // 12. Botó "Amagar 2" --> slideUp + alert abans d'iniciar (20).
+            $("#amagar2").on("click", function () {
+                alert("Iniciant efecte...");
+                $("img").slideUp();
+            });
+
+            // 13. Botó "Mostrar 2" --> slideDown
+            $("#mostrar2").on("click", function () {
+                $("img").slideDown();
+            });
+
+            // 14. Botó "Mostrar/Amagar 2" --> slideToggle + alert al acabar (19).
+            $("#toggle2").on("click", function () {
+                $("img").slideToggle(function () {
+                    alert("fí d'efecte");
+                });
+            });
+
+            // 15. Botó "Animar imatge" --> animar amplada a 500px.
+            $("#animar").on("click", function () {
+                $("img").animate({ width: "500px" });
+            });
+
+            // 16. Botó "Resetejar animació de la imatge" --> restaurar amplada a 1000px.
+            $("#resetanim").on("click", function () {
+                $("img").animate({ width: "1000px" });
+            });
+
+        });
+
+        
+     </script>
+
+</body>
+
+</html>
