@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <button id="startAnim">Iniciar animació</button>
+    <div id="animDiv" style="display:block; width:200px; height:200px; background:red;"></div>
+
+    <script>
+        $(document).ready(function () {
+            $("#startAnim").click(function () {
+                $("#animDiv").animate(
+                    {
+                        width: "500px",
+                        height: "500px",
+                        backgroundColor: "green"
+                    }
+                );
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery UI - Interaccions</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+    <style>
+        body {
+            padding: 25px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>jQuery UI - Widgets</h2>
+
+    <div id="container1">
+        <h3>Section 1</h3>
+        <div class="seccio1">
+            <p>
+                Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer.</p>
+            <p><label for="tags">Tags: </label>
+                <input id="tags">
+            </p>
+            <p>Date: <input type="text" id="data_naixament"></p>
+            <p><label for="seleccio1">Select a number</label>
+                <select id="seleccio1">
+                    <option>1</option>
+                    <option selected="selected">2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                </select>
+            </p>
+            <p><label for="input1">Input a number: </label>
+                <input id="input1">
+            </p>
+
+        </div>
+        <h3>Section 2</h3>
+        <div class="seccio2">
+            <p>
+                Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                purus.</p>
+
+            <button>A button element</button>
+            <input type="submit" value="A submit button">
+            <a href="#">An anchor</a>
+
+            <ul id="llista1">
+                <li>
+                    <div>Llibres</div>
+                    <ul>
+                        <li>
+                            <div>Terror</div>
+                        </li>
+                        <li>
+                            <div>Drama</div>
+                        </li>
+                        <li>
+                            <div>Humor</div>
+                        </li>
+                        <li>
+                            <div>Infantil</div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Pelicules</div>
+                </li>
+                <li>
+                    <div>Música</div>
+                    <ul>
+                        <li>
+                            <div>Rock</div>
+                        </li>
+                        <li>
+                            <div>Drum and Bass</div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <h3>Section 3</h3>
+        <div class="seccio3">
+            <p>
+                Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.</p>
+
+            <h4>Radio Group</h4>
+            <fieldset>
+                <legend>Select a Location: </legend>
+                <label for="radio-1">New York</label>
+                <input type="radio" name="radio-1" id="radio-1">
+                <label for="radio-2">Paris</label>
+                <input type="radio" name="radio-1" id="radio-2">
+                <label for="radio-3">London</label>
+                <input type="radio" name="radio-1" id="radio-3">
+            </fieldset>
+        </div>
+        <h3>Section 4</h3>
+        <div class="seccio4">
+            <p>
+                Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                purus.</p>
+            <fieldset>
+                <legend>Rental Car</legend>
+                <div class="controlgroup">
+                    <select id="car-type">
+                        <option>Compact car</option>
+                        <option>Midsize car</option>
+                        <option>Full size car</option>
+                        <option>SUV</option>
+                        <option>Luxury</option>
+                        <option>Truck</option>
+                        <option>Van</option>
+                    </select>
+                    <label for="transmission-standard">Standard</label>
+                    <input type="radio" name="transmission" id="transmission-standard">
+                    <label for="transmission-automatic">Automatic</label>
+                    <input type="radio" name="transmission" id="transmission-automatic">
+                    <label for="insurance">Insurance</label>
+                    <input type="checkbox" name="insurance" id="insurance">
+                    <label for="horizontal-spinner" class="ui-controlgroup-label"># of cars</label>
+                    <input id="horizontal-spinner" class="ui-spinner-input">
+                    <button>Book Now!</button>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+
+    <script>
+        // 3. Fes que la capa #container1 es vegui com un "accordion".
+        $("#container1").accordion();
+
+        // 4. Afegeix la funcionalitat de autocomplete al input #tags que es troba a la seccio 1, els tags que cal posar són: carles, joan, maria, rosa, mariona, jordi, lluis, marta, sandra, arnau, nil.
+        $(function () {
+            $("#tags").autocomplete({
+                source: [
+                    "carles", "joan", "maria", "rosa", "mariona",
+                    "jordi", "lluis", "marta", "sandra", "arnau", "nil"
+                ]
+            });
+        });
+
+        // 5. A la secció 2 apareix: un button, un input.submit i un enllaç. Fes que tots tres es visualitzin com un butó (jQuery UI Button).
+        $(".seccio2 button, .seccio2 input[type=submit], .seccio2 a").button();
+
+        // 6. A la secció 3, apareixen uns input.radios amb els seus respectius labels, fes que es visualitzin amb jQuery UI "checkboxradio".
+        $(".seccio3 input[type=radio]").checkboxradio();
+
+
+        // 7. A la seccio 4 apareix un formulari amb varies opcions. Amb jQuery podem agrupar aquestes opcions amb jQuery UI "Controlgroup". Agrupala la capa div.controlgroup.
+        $(".controlgroup").controlgroup();
+
+
+        // 8. A la secció 1, hi ha un input.text amb identificador "data_naixament", converteix-lo en un jQuery "datepicker".
+        $("#data_naixament").datepicker();
+
+
+        // 9. A la secció 2 apareix una llista #llista1 converteix-lo en un menú amb jQuery UI "menu".
+        $("#llista1").menu();
+
+
+        // 10. A la secció 1 hi ha un select #seleccio1 aplicali el jQuery UI "selectmenu".
+        $("#seleccio1").selectmenu();
+
+
+        // 11. A la secció 1 hi ha un input #input1  aplicali el jQuery UI "spinner" per a que l'input només es poguin introduir números i apareguin unes fletxes per pujar o baixar valor.
+        $("#input1").spinner();
+
+    </script>
+</body>
+
+</html>

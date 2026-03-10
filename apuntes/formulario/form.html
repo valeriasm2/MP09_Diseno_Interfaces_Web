@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery UI - Interaccions</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+    <style>
+        body {
+            padding: 25px;
+            font-size: 25px;
+        }
+
+        .error {
+            color: red;
+            background: LightPink;
+        }
+
+        span.error {
+            display: block;
+            font-size: 15px;
+        }
+
+        #box-form {
+            display: none;
+        }
+
+        #open-create-user {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Formularis amb jQuery (1)</h2>
+
+    <div id="box-form" title="Create new user">
+
+        <p>All form fields are required.</p>
+        <form id="form1" action="" method="post">
+            <fieldset>
+                <p><label for="name">Name</label>
+                    <input type="text" name="name" id="name" value="" class=""><span class="error"
+                        id="error_name"></span>
+                </p>
+
+                <p><label for="lastname">Lastname</label>
+                    <input type="text" name="lastname" id="lastname" value="" class=""><span class="error"
+                        id="error_lastname"></span>
+                </p>
+
+                <p><label for="birthday">Birthday</label>
+                    <input type="text" name="birthday" id="birthday" value="" class=""><span class="error"
+                        id="error_birthday"></span>
+                </p>
+
+                <p><label for="email">Email</label>
+                    <input type="text" name="email" id="email" value="" class=""><span class="error"
+                        id="error_email"></span>
+                </p>
+
+                <p><label for="password">Password</label>
+                    <input type="password" name="password" id="password" value="" class=""><span class="error"
+                        id="error_password"></span>
+                </p>
+
+                <p><label for="password">Repeat password</label>
+                    <input type="password2" name="password2" id="password2" value="" class=""><span class="error"
+                        id="error_password2"></span>
+                </p>
+
+                <input type="submit" value="Create new user">
+            </fieldset>
+        </form>
+    </div>
+    <button id="open-create-user">Create new user</button>
+
+
+    <h3>Existing Users</h3>
+    <table border="1" id="users" cellpadding="10" class="">
+        <thead>
+            <tr class="">
+                <th>Name</th>
+                <th>Email</th>
+                <th>Birthday</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Xavi Gómez</td>
+                <td>xgomez@xtec.cat</td>
+                <td>2021/02/24</td>
+                <td>123qwerty</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        $(document).ready(function () {
+
+            // 1. Añadir clases a los inputs
+            $("#form1 input").addClass("text ui-widget-content ui-corner-all");
+
+            // 2. Añadir clases a la tabla y al thead
+            $("#users").addClass("ui-widget ui-widget-content");
+            $("#users thead tr").addClass("ui-widget-header");
+
+            // 3. Ocultar formulario y abrir con botón
+            $("#box-form").hide();
+            $("#open-create-user").click(function () {
+                $("#box-form").dialog({ modal: true, width: 500 });
+            });
+
+            // 4. Datepicker y atributos básicos
+            $("#birthday").attr({ placeholder: "YYYY/MM/DD", required: true }).datepicker({
+                dateFormat: "yy/mm/dd",
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "1900:2048"
+            });
+
+            $("#name").attr({ required: true, maxlength: 32 });
+            $("#lastname").attr({ required: true, maxlength: 32 });
+            $("#email").attr({ required: true, maxlength: 320 });
+            $("#password").attr({ required: true, maxlength: 128 });
+            $("#password2").attr({ required: true, maxlength: 128 });
+
+            // 5. Validación y añadir a la tabla
+            $("#form1").submit(function (e) {
+                e.preventDefault();
+                let err = false;
+
+                // Limpiar mensajes de error previos
+                $("#error_name, #error_lastname, #error_email, #error_password, #error_password2").html("");
+
+                let name = $("#name").val().trim();
+                let lastname = $("#lastname").val().trim();
+                let email = $("#email").val().trim();
+                let birthday = $("#birthday").val().trim();
+                let password = $("#password").val();
+                let password2 = $("#password2").val();
+
+                if (name.length < 2) { $("#error_name").html("Min 128 caracteres"); err = true; }
+                if (lastname.length < 2) { $("#error_lastname").html("Min 128 caracteres"); err = true; }
+                if (email.length < 5) { $("#error_email").html("Min 5 caracteres"); err = true; }
+                if (password.length < 8) { $("#error_password").html("Min 8 caracteres"); err = true; }
+                if (password !== password2) { $("#error_password2").html("No coinciden"); err = true; }
+
+                if (!err) {
+                    // Añadir fila a la tabla
+                    let row = `<tr>
+                                    <td>${name} ${lastname}</td>
+                                    <td>${email}</td>
+                                    <td>${birthday}</td>
+                                    <td>${password}</td>
+                                </tr>`;
+                    $("#users tbody").append(row);
+
+                    // Limpiar el formulario
+                    $("#form1")[0].reset();
+
+                    // Cerrar el diálogo
+                    $("#box-form").dialog("close");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

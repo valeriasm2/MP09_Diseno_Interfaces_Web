@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery UI - Interaccions</title>
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- jQuery UI CDN (full version stable) -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <style>
+        body {
+            padding: 25px;
+            font-size: 25px;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            background: silver;
+            margin: 15px 0;
+        }
+
+        .container {
+            width: 300px;
+            height: 300px;
+            border: 4px dotted grey;
+            margin: 15px 0;
+        }
+
+        div#box1 {
+            background: red;
+        }
+
+        div#box2 {
+            background: green;
+            float: left;
+        }
+
+        div#container2 {
+            float: left;
+            margin: 0 0 0 15px;
+        }
+
+        div#box3 {
+            clear: both;
+            background: orange;
+        }
+
+        li {
+            border: 1px solid grey;
+            margin: 5px 0;
+            padding: 10px;
+        }
+
+        .ui-selected {
+            background: orange;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>jQuery UI - Interaccions</h2>
+
+    <div id="box1" class="box"></div>
+
+    <div>
+        <div id="box2" class="box"></div>
+        <div id="container2" class="container"></div>
+    </div>
+
+    <div id="box3" class="box"></div>
+
+    <h2>Llista 1</h2>
+    <ol id="llista1">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+        <li>Item 6</li>
+        <li>Item 7</li>
+    </ol>
+
+    <h2>Llista 2</h2>
+    <ol id="llista2">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+        <li>Item 6</li>
+        <li>Item 7</li>
+    </ol>
+
+    <script>
+        /*
+    Resol les següents preguntes:
+    1. Carrega jQuery des de on volgueu.
+    2. Carrega jQuery UI (full version stable) des de  on volgueu.
+    
+    3. Fes que la capa #box1 sigui "draggable".
+    4. Fes que la capa #box2 sigui "droppable" a la capa #container2.
+    5. Fes que la capa #box3 sigui "resizable".
+    6. Fes que la llista #llista1 sigui "selectable".
+    6. Fes que la llista #llista2 sigui "sortable".
+    */
+
+    $(document).ready(function() {
+        $("#box1").draggable();
+        $("#box2").droppable();
+        $("#box3").resizable();
+        $("#llista1").selectable();
+        $("#llista2").sortable();
+
+
+    });
+    </script>
+</body>
+
+</html>
