@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus styling</title>
+    <style>
+        input,
+        ol {
+            font-size: 3rem
+        }
+
+        input {
+            width: 5rem;
+        }
+
+        ul {
+            columns: 4 7rem;
+        }
+
+    </style>
+</head>
+
+<body>
+    <p>Feu clic a qualsevol entrada i, a continuació, premeu la tecla de tabulació.</p>
+    <!--
+L'ordre de tabulació ha de coincidir amb el número de la llista.
+-->
+    <ul>
+        <li>01. <input tabindex="1"></li>
+        <li>05. <input tabindex="5"></li>    
+        <li>09. <input tabindex="9"></li>
+        <li>02. <input tabindex="2"></li>
+        <li>06. <input tabindex="6"></li>
+        <li>10. <input tabindex="10"></li>
+        <li>03. <input tabindex="3"></li>
+        <li>07. <input tabindex="7"></li>
+        <li>11. <input tabindex="11"></li>
+        <li>04. <input tabindex="4"></li>
+        <li>08. <input tabindex="8"></li>
+        <li>12. <input tabindex="12"></li>
+    </ul>
+
+</html>

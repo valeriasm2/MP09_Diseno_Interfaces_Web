@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo DataTables</title>
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="//cdn.datatables.net/2.3.7/css/dataTables.dataTables.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- DataTables JS -->
+    <script src="//cdn.datatables.net/2.3.7/js/dataTables.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table id="myTable" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Región</th>
+                <th>Nivel</th>
+                <th>Poder</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Flamix</td>
+                <td>Fuego</td>
+                <td>Kanto</td>
+                <td>12</td>
+                <td>340</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Aquary</td>
+                <td>Agua</td>
+                <td>Johto</td>
+                <td>15</td>
+                <td>360</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Leafor</td>
+                <td>Planta</td>
+                <td>Hoenn</td>
+                <td>10</td>
+                <td>300</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Voltbit</td>
+                <td>Eléctrico</td>
+                <td>Sinnoh</td>
+                <td>18</td>
+                <td>410</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Rockon</td>
+                <td>Roca</td>
+                <td>Unova</td>
+                <td>22</td>
+                <td>450</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Winglet</td>
+                <td>Volador</td>
+                <td>Kalos</td>
+                <td>14</td>
+                <td>330</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Shadowl</td>
+                <td>Siniestro</td>
+                <td>Galar</td>
+                <td>25</td>
+                <td>470</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Mindor</td>
+                <td>Psíquico</td>
+                <td>Alola</td>
+                <td>19</td>
+                <td>420</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Froston</td>
+                <td>Hielo</td>
+                <td>Kanto</td>
+                <td>17</td>
+                <td>395</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Venomix</td>
+                <td>Veneno</td>
+                <td>Johto</td>
+                <td>16</td>
+                <td>375</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Flareonix</td>
+                <td>Fuego</td>
+                <td>Hoenn</td>
+                <td>28</td>
+                <td>500</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Aquazor</td>
+                <td>Agua</td>
+                <td>Sinnoh</td>
+                <td>30</td>
+                <td>520</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Leafling</td>
+                <td>Planta</td>
+                <td>Unova</td>
+                <td>11</td>
+                <td>310</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Sparkit</td>
+                <td>Eléctrico</td>
+                <td>Kalos</td>
+                <td>20</td>
+                <td>430</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Granitus</td>
+                <td>Roca</td>
+                <td>Galar</td>
+                <td>24</td>
+                <td>465</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Skybee</td>
+                <td>Volador</td>
+                <td>Alola</td>
+                <td>13</td>
+                <td>320</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Darkoon</td>
+                <td>Siniestro</td>
+                <td>Kanto</td>
+                <td>27</td>
+                <td>495</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Psyling</td>
+                <td>Psíquico</td>
+                <td>Johto</td>
+                <td>21</td>
+                <td>440</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Glacior</td>
+                <td>Hielo</td>
+                <td>Hoenn</td>
+                <td>23</td>
+                <td>455</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Toxling</td>
+                <td>Veneno</td>
+                <td>Sinnoh</td>
+                <td>18</td>
+                <td>405</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        let table = new DataTable('#myTable', {
+            responsive: true,
+            columnControl: true
+        });
+    </script>
+
+</body>
+
+</html>

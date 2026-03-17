@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.css">
+
+</head>
+
+<body>
+    <form action="" method="post">
+        <input name="p1" type="password" required /><br/>
+        <input name="p2" type="password" required /><br/>
+        <input name="Enviar" type="submit" />
+    </form>
+
+    <script>
+        $(function() {
+          $("form").on("submit", function(e) {
+            var p1 = $("input[name='p1']").val();
+            var p2 = $("input[name='p2']").val();
+            if (p1.length < 8 || p1 !== p2) {
+              alert("ERROR");
+              e.preventDefault();
+            } else {
+              if (!confirm("Les contrasenyes són correctes. Vols enviar el formulari?")) {
+                e.preventDefault();
+              }
+            }
+          });
+        });
+      </script>
+</body>
+
+</html>

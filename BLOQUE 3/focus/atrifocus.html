@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,
+        ol {
+            font-size: 2rem
+        }
+    </style>
+</head>
+
+<body>
+    <p>Click in any input, then hit the tab key.</p>
+
+    <ol>
+        <li><input tabindex="3" value="3"></li>
+        <li><input tabindex="6" value="6"></li>
+        <li><input tabindex="2" value="2"></li>
+        <li><input tabindex="0" value="0"></li>
+        <li><input tabindex="0" value="0"></li>
+        <li><input tabindex="-1" value="-1"></li>
+        <li><input tabindex="0" value="0"></li>
+        <li><input tabindex="8" value="8"></li>
+        <li><input tabindex="1" value="1"></li>
+        <li><input tabindex="5" value="5"></li>
+        <li><input tabindex="7" value="7"></li>
+        <li><input tabindex="4" value="4"></li>
+    </ol>
+    <!-- el -1 nunca se va a tabular.
+         Los elementos con tabindex="-1" no son accesibles mediante la tecla de tabulación, 
+         por lo que al recorrer los inputs usando 'tab', este campo será saltado.
+         Los tabindex="0" siguen el orden natural del DOM después de los de valor positivo,
+         y los tabindex con valores positivos definen primero el orden de tabulación según 
+         el número: primero el 1, luego el 2, el 3, etc. Tras los positivos, pasan los 0,
+         y finalmente los negativos quedan fuera del orden de tabulación.
+    -->
+
+</body>
+
+</html>
